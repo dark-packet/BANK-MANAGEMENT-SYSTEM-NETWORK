@@ -1,5 +1,3 @@
 # NEWTWORK-STTC PYTHON TO NESTJS
-FAKE TEST DETECTED 
-REPEAT ERROR SHOWED
-GITHUB OPEN AND REPEAT ERROR SHOW
-THIS IS GOOD YHA?
+
+A network static analysis project migrated from Python to NestJS, designed to monitor network activity, analyze traffic, and identify potential security issues.
