@@ -10,4 +10,4 @@ just goood
 
 ## Preview
 
-[![Pinterest Image](YOUR_DIRECT_IMAGE_URL)](https://pin.it/3emvVTtGF)
+[![Pinterest Image](YOUR_DIRECT_IMAGE_URL)]([https://pin.it/3emvVTtGF](https://media.tenor.com/myPHsReL2YIAAAAM/hacker.gif))
