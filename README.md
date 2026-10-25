@@ -2,8 +2,6 @@
 
 # 🏦 Network Static Toolkit
 
-### A collection of beginner-friendly, from-scratch system projects
-
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](LICENSE)
 ![C++](https://img.shields.io/badge/C++-17-blue.svg)
 ![Compiler](https://img.shields.io/badge/g++-required-9cf.svg)
