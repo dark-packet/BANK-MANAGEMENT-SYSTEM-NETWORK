@@ -1,9 +1,17 @@
-// Bank Management System (console-based, beginner friendly)
-// Accounts are stored in a simple text file: accounts.txt
-// Transaction history is stored in: transactions.txt
+// ============================================================================
+//  Bank Management System (console-based, beginner friendly)
+//  Repository : https://github.com/sadhik-ali/NEWTWORK-STTC
+//  Author     : Sadhik Ali
+//  License    : Creative Commons Attribution 4.0 International (CC BY 4.0)
+//               https://creativecommons.org/licenses/by/4.0/
+//
+//  Accounts are stored in a simple text file: accounts.txt
+//  Transaction history is stored in: transactions.txt
+// ============================================================================
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <iomanip>
 #include <ctime>
@@ -38,8 +46,9 @@ bool findAccount(const string& acc, double& balance, string& name) {
         line = trimNewline(line);
         // expected format: accNo|name|balance
         size_t first = line.find('|');
-        size_t second = line.find('|', first + 1);
         if (first == string::npos) continue;
+        size_t second = line.find('|', first + 1);
+        if (second == string::npos) continue; // skip malformed lines
         if (line.substr(0, first) == acc) {
             name = line.substr(first + 1, second - first - 1);
             balance = stod(line.substr(second + 1));
@@ -61,9 +70,12 @@ void updateBalance(const string& acc, double newBalance) {
     while (getline(in, line) && count < 1000) {
         line = trimNewline(line);
         size_t first = line.find('|');
-        if (first != string::npos && line.substr(0, first) == acc) {
-            size_t second = line.find('|', first + 1);
-            line = line.substr(0, second + 1) + to_string(newBalance);
+        size_t second = line.find('|', first + 1);
+        if (first != string::npos && second != string::npos &&
+            line.substr(0, first) == acc) {
+            ostringstream value;
+            value << fixed << setprecision(2) << newBalance;
+            line = line.substr(0, second + 1) + value.str();
         }
         lines[count++] = line;
     }
